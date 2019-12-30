@@ -5,7 +5,6 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   app:layoutDescription="@xml/motion_scene"
-  app:motionDebug="SHOW_PATH"
   android:background="@color/colorBackground"
   tools:context=".MainActivity">
 
@@ -46,9 +45,6 @@
     android:layout_height="@dimen/saber_height"
     android:contentDescription="@string/light_saber"
     android:scaleType="fitCenter"
-    app:layout_constraintBottom_toTopOf="@+id/yoda"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
     app:srcCompat="@drawable/lightsaber" />
 
   <ImageView

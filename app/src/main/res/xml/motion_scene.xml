@@ -10,6 +10,14 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/trooper"/>
+
+    <Constraint
+      android:id="@+id/lightSaber"
+      android:layout_width="@dimen/saber_width"
+      android:layout_height="@dimen/saber_height"
+      app:layout_constraintBottom_toTopOf="@+id/yoda"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"/>
   </ConstraintSet>
 
   <ConstraintSet android:id="@+id/end">
@@ -19,6 +27,15 @@
       android:layout_height="@dimen/laser_height"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Constraint
+      android:id="@+id/lightSaber"
+      android:layout_width="@dimen/saber_width"
+      android:layout_height="@dimen/saber_height"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/trooper"/>
+
   </ConstraintSet>
 
   <Transition
@@ -26,9 +43,10 @@
     app:constraintSetEnd="@id/end"
     app:duration="1000">
 
-    <OnClick
-      app:targetId="@id/trooper"
-      app:clickAction="toggle"/>
+  <OnSwipe
+    app:dragDirection="dragUp"
+    app:touchAnchorId="@id/lightSaber"
+    app:touchAnchorSide="bottom"/>
 
     <KeyFrameSet>
         <KeyPosition
@@ -46,18 +64,13 @@
         app:percentY="0.8"/>
 
       <KeyAttribute
-        android:rotation="0"
-        app:framePosition="50"
-        app:motionTarget="@id/laserFire"/>
-
-      <KeyAttribute
-        android:rotation="45"
-        app:framePosition="100"
-        app:motionTarget="@id/laserFire"/>
-
-      <KeyAttribute
         android:alpha="1.0"
-        app:framePosition="75"
+        app:framePosition="49"
+        app:motionTarget="@id/laserFire"/>
+
+      <KeyAttribute
+        android:alpha="0.0"
+        app:framePosition="50"
         app:motionTarget="@id/laserFire"/>
 
       <KeyAttribute
@@ -91,6 +104,19 @@
           app:attributeName="colorFilter"
           app:customColorValue="#00FF00"/>
       </KeyAttribute>
+
+      <KeyAttribute
+        android:rotation="90"
+        app:framePosition="50"
+        app:motionTarget="@id/lightSaber"/>
+      <KeyAttribute
+        android:rotation="270"
+        app:framePosition="75"
+        app:motionTarget="@id/lightSaber"/>
+      <KeyAttribute
+        android:rotation="360"
+        app:framePosition="100"
+        app:motionTarget="@id/lightSaber"/>
 
     </KeyFrameSet>
   </Transition>
