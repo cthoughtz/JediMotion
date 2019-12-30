@@ -26,7 +26,9 @@
     app:constraintSetEnd="@id/end"
     app:duration="1000">
 
-   <OnSwipe app:touchAnchorId="@id/laserFire"/>
+    <OnClick
+      app:targetId="@id/trooper"
+      app:clickAction="toggle"/>
 
     <KeyFrameSet>
         <KeyPosition
@@ -42,6 +44,37 @@
         app:keyPositionType="parentRelative"
         app:percentX="0.25"
         app:percentY="0.8"/>
+
+      <KeyAttribute
+        android:rotation="0"
+        app:framePosition="50"
+        app:motionTarget="@id/laserFire"/>
+
+      <KeyAttribute
+        android:rotation="45"
+        app:framePosition="100"
+        app:motionTarget="@id/laserFire"/>
+
+      <KeyAttribute
+        android:alpha="1.0"
+        app:framePosition="75"
+        app:motionTarget="@id/laserFire"/>
+
+      <KeyAttribute
+        android:alpha="0.0"
+        app:framePosition="100"
+        app:motionTarget="@id/laserFire"/>
+
+      <KeyAttribute
+        android:alpha="0.0"
+        app:framePosition="60"
+        app:motionTarget="@id/message"/>
+
+      <KeyAttribute
+        android:alpha="1.0"
+        app:framePosition="100"
+        app:motionTarget="@id/message"/>
+
     </KeyFrameSet>
   </Transition>
 </MotionScene>
