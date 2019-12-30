@@ -26,9 +26,7 @@
     app:constraintSetEnd="@id/end"
     app:duration="1000">
 
-    <OnClick
-      app:targetId="@id/laserFire"
-      app:clickAction="toggle"/>
+   <OnSwipe app:touchAnchorId="@id/laserFire"/>
 
     <KeyFrameSet>
         <KeyPosition
